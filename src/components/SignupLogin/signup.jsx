@@ -1,8 +1,10 @@
 import React from "react";
 
 import InputBase from "../utils/inputs/inputBase";
+import styles from "./signup.module.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faFacebookF} from '@fortawesome/free-brands-svg-icons'
+
 
 class Signup extends React.Component {
     constructor(props) {
@@ -29,17 +31,17 @@ class Signup extends React.Component {
         ];
     return (
         <>
-            <div className="signupContainer">
+            <div className={styles.container}>
                 <h1>Sign Up</h1>
-                <form className="signupForm">
+                <form className={styles.form}>
                     {inputData.map((input, index) => {
                         return <InputBase key={index} {...input} />
                     })}
-                    <button className="signupButton">Sign Up</button>
+                    <button className= {styles.btn}>Sign Up</button>
                 </form>
             </div>
             <hr />
-            <button className="fbButton"><FontAwesomeIcon icon={faFacebookF}/>  Sign Up with Facebook</button>
+            <button className={styles["fb-btn"]}><FontAwesomeIcon icon={faFacebookF}/>  Sign Up with Facebook</button>
         </>
     )}
 }
